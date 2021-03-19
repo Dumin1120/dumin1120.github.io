@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Du-Min's personal website</title>
+    <link rel="stylesheet" href="./index.css">
+    <script src="./index.js"></script>
+</head>
+<body>
+    <nav class="hide">
+        <ul>
+            <li><button class="nav-button" id="btn-about">About</button></li>
+            <li><button class="nav-button" id="btn-skills">Skills</button></li>
+            <li><button class="nav-button" id="btn-projects">Projects</button></li>
+            <li><button class="nav-button" id="btn-contact">Contact</button></li>
+            <li><button class="nav-button" id="btn-resume">Resume</button></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="show" id="intro">
+            <div id="intro-container">
+                <p> Login: <span id="time-text"></span> on ttys000</h2>
+                <p> ~ <span id="typed-text"></span><span id="term-cursor">❚</span></h2>
+                <p id="count-down"></h2>
+            </div>
+        </section>
+        <section class="hide" id="about">
+            <div class="section-header"></div>
+            <div id="about-container">
+                <div id="msg-container">
+                    <p id="msg1">Hi, my name is</p>
+                    <p id="msg2"><span id="my-name">Du Min Chen</span>.</p>
+                    <p id="msg3">I'm a full stack software developer.</p>
+                    <div><button id="btn-about-read">read more</button></div>
+                </div>
+                <p id="msg4">My interest in computers led me to build my own custom computer! I am now studying to become a full stack software developer/engineer at Pursuit, an intensive 12-month software engineering fellowship with a 9% acceptance rate. Pursuing software engineering is second nature to me, I am versed in JavaScript. By becoming a full stack software developer/engineer, I seek to create programs and apps that improve human lives through efficiency. Outside of coding, I enjoying playing RPG games like Dark Souls and learn about personal finance on YouTube.</p>
+                <div id="msg5">
+                    <div id="profile-container">
+                        <img id="profile" src="./assets/pic/profile.jpg" alt="">
+                    </div>
+                    <div id="profile-overlay"></div>
+                </div>
+            </div>
+            <div class="section-footer"></div>
+        </section>
+        <section class="hide" id="skills">
+            <div class="section-header"></div>
+            <ul>
+                <li>under construction</li>
+                <li>html</li>
+                <li>css</li>
+                <li>js</li>
+                <li>node.js</li>
+                <li>react</li>
+                <li>redux</li>
+            </ul>
+            <div class="section-footer"></div>
+        </section>
+        <section class="hide" id="projects">
+            <div class="section-header"></div>
+            <div id="projects-container">
+                <div id="project-1">
+                    <div class="project-desc">
+                        <h2>Dragon Siege</h2>
+                        <h3>It is a text turn-based Role-Playing-Game using node.js and terminal.</h3>
+                        <ul>
+                            <li>A turn-based combat system that during combat player and monster take turn to attack</li>
+                            <li>A level-up system that player gains experience from killing monster then level up</li>
+                            <li>A shop system that player can buy equipments from the shop</li>
+                            <li>An item system that player can equip items bought from shop</li>
+                        </ul>
+                        <ul class="github-link">
+                            <li><a href="https://github.com/Dumin1120/FSW-Text-Based-Adventure" target="_blank">GitHub Repo</a></li>
+                        </ul>
+                    </div>
+                    <div class="img-container">
+                        <img class="project-img" src="./assets/pic/ds.gif">
+                    </div>
+                    <div class="img-overlay"></div>
+                </div>
+                <div id="project-2">
+                    <div class="project-desc">
+                        <h2>Snowman</h2>
+                        <h3>It is a word guessing game that each time a player guesses one letter, also known as hangman game</h3>
+                        <ul>
+                            <li>Use console.clear() function and while loop to mimic the screen is constantly updating after every letter guess</li>
+                            <li>Use square emoji to mimic the word board</li>
+                            <li>Add a cheat code to the game that the word generated will be shown if cheat code is entered</li>
+                            <li>Add snowman emoji to indicate lives (number of tries left)</li>
+                        </ul>
+                        <ul class="github-link">
+                            <li><a href="https://github.com/Dumin1120/FSW-CLI-Snowman" target="_blank">GitHub Repo</a></li>
+                        </ul>
+                    </div>
+                    <div class="img-container">
+                        <img class="project-img" src="./assets/pic/sm.gif">
+                    </div>
+                    <div class="img-overlay"></div>
+                </div>
+            </div>
+            <div class="section-footer"></div>
+        </section>
+        <section class="hide" id="contact">
+            <div class="section-header"></div>
+            <div id="contact-container">
+                <p>Feel free to leave me a message!</p>
+                <form action="https://formspree.io/f/mgerwwbk" method="POST">
+                    <label for="_replyto">Your email</label>
+                    <input type="email" name="_replyto" required>
+                    <label for="message">Your message</label>
+                    <textarea name="message" required></textarea>
+                    <button type="submit">Send</button>
+                </form>
+                <ul id="contact-links">
+                    <li><a href="mailto:duminchen@pursuit.org">Email</a></li>
+                    <li><a href="https://github.com/Dumin1120">GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/in/dumin0121/">LinkedIn</a></li>
+                </ul>
+            </div>
+            <div class="section-footer"></div>
+        </section>
+        <section class="hide" id="resume">
+            <div class="section-header"></div>
+            <div id="resume-container">
+                <iframe src="./assets/resume.pdf">
+                    This browser does not support PDFs. Please download the PDF to view it: <a href=".assets/resume.pdf">Download PDF</a>
+                </iframe>
+            </div>
+            <div class="section-footer"></div>
+        </section>
+    </main>
+</body>
+</html>
