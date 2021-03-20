@@ -54,8 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
         btn.addEventListener("click", () => showSection(`#${btn.id.split("-")[1]}`))
     }
 
-    const btnAboutRead = document.querySelector("#btn-about-read")
-    btnAboutRead.addEventListener("click", event => {
+    document.querySelector("#btn-about-read").addEventListener("click", event => {
         const msg4 = document.querySelector("#msg4")
         const read = event.target.textContent === "read more"
         msg4.style.visibility = read ? "visible" : ""
@@ -72,10 +71,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
     shuffleNameColor()
-    const myName = document.querySelector("#my-name")
     let colorIndex = 0
     let colorChange = true
-    myName.addEventListener("mouseover", () => {
+    const myName = document.querySelector("#my-name")
+    function changeNameColor(){
         if(!colorChange){
             return
         }
@@ -91,11 +90,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 colorChange = true
             }, 8000)
         }
-    })
-    const profile = document.querySelector("#profile")
-    let degVal = 0
-    profile.addEventListener("click", () => {
-        degVal = (degVal + 45) % 360
-        profile.style.transform = `rotate(${degVal}deg)`
-    })
+    }
+    myName.addEventListener("mouseover", changeNameColor)
+    myName.addEventListener("click", changeNameColor)
+    // spin profile removed for now
+    // let degVal = 0
+    // document.querySelector("#profile").addEventListener("click", event => {
+    //     degVal = (degVal + 45) % 360
+    //     event.target.style.transform = `rotate(${degVal}deg)`
+    // })
 })

@@ -189,4 +189,9 @@ Your site needs to implement all user stories and meet the UI/UX criteria. There
 5. **Other**: (Optional) Anything else with things you may want to include, if you write, then a blog section, if you paint or photograph then a gallery section etc.
 
 Version History:
+
+1.002 add skills section, working on responsive web design
+
+1.001 fix broken image links
+
 1.000 initial version, working on skills section and responsive web design
