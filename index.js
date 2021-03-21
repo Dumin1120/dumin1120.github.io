@@ -100,30 +100,32 @@ document.addEventListener("DOMContentLoaded", () => {
     //     degVal = (degVal + 45) % 360
     //     event.target.style.transform = `rotate(${degVal}deg)`
     // })
-    
+
     const form = document.querySelector("form")
     form.addEventListener("submit", event => {
-    event.preventDefault()
-    const email = document.querySelector("input")
-    const userMessage = document.querySelector("textarea")
-    axios.post("https://formspree.io/f/mgerwwbk", {_repyto : email.value, message : userMessage.value})
+        event.preventDefault()
+        const email = document.querySelector("input")
+        const userMessage = document.querySelector("textarea")
+        const section = document.querySelector("#contact")
+        const div = document.createElement("div")
+        div.className = "submit-response"
+        axios.post("https://formspree.io/f/mgerwwbk", { _repyto : email.value, message : userMessage.value })
         .then(response => {
-            const feedback = document.querySelector("#submit-feedback")
-            feedback.style.display = "flex"
             if(response.data.ok){
                 email.value = ""
                 userMessage.value = ""
-                feedback.textContent = "Your message was submitted successfully!"
+                div.textContent = "Your message was submitted successfully!"
             } else {
-                feedback.style.color = "#ff0000"
-                feedback.textContent = "There was an error. Please try agian later!"
+                div.style.color = "#ff0000"
+                div.textContent = "There was an error. Please try agian later!"
             }
-            setTimeout(() => {
-                feedback.style.color = ""
-                feedback.innerHTML = ""
-                feedback.display = ""
-            }, 5000)
+            section.insertBefore(div, section.childNodes[0])
+            setTimeout(() => div.remove(), 6000)
+        }).catch(err => {
+            div.style.color = "#ff0000"
+            div.textContent = err
+            section.insertBefore(div, section.childNodes[0])
+            setTimeout(() => div.remove(), 6000)
         })
-        .catch(err => console.error(err))
-    })  
+    })
 })

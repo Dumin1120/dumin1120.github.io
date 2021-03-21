@@ -73,8 +73,8 @@ section {
     list-style-type: none;
     padding: 0px;
 }
-#submit-feedback {
-    display: none;
+.submit-response {
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
     background-color: #c1deca;
