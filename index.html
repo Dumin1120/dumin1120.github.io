@@ -7,6 +7,7 @@
     <title>Du-Min's personal website</title>
     <link rel="stylesheet" href="./index.css">
     <script src="./index.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
     <nav class="hide">
@@ -49,12 +50,12 @@
             <div class="section-header"></div>
             <div id="skills-container">
                 <ul>
-                    <li><img class="skills-icons" src="./assets/icons/html.png">html</li>
-                    <li><img class="skills-icons" src="./assets/icons/css.png">css</li>
-                    <li><img class="skills-icons" src="./assets/icons/js.png">js</li>
-                    <li><img class="skills-icons" src="./assets/icons/node.png">node.js</li>
-                    <li><img class="skills-icons" src="./assets/icons/react.png">react</li>
-                    <li><img class="skills-icons" src="./assets/icons/redux.png">redux</li>
+                    <li><img class="skills-icons" src="./assets/icons/html.png">HTML</li>
+                    <li><img class="skills-icons" src="./assets/icons/css.png">CSS</li>
+                    <li><img class="skills-icons" src="./assets/icons/js.png">JavaScript</li>
+                    <li><img class="skills-icons" src="./assets/icons/node.png">Node.js</li>
+                    <li><img class="skills-icons" src="./assets/icons/react.png">React</li>
+                    <li><img class="skills-icons" src="./assets/icons/redux.png">Redux</li>
                 </ul>
             </div>
             <div class="section-footer"></div>
@@ -104,10 +105,11 @@
             <div class="section-footer"></div>
         </section>
         <section class="hide" id="contact">
+            <div id="submit-feedback"></div>
             <div class="section-header"></div>
             <div id="contact-container">
                 <p>Feel free to leave me a message!</p>
-                <form action="https://formspree.io/f/mgerwwbk" method="POST">
+                <form>
                     <label for="_replyto">Your email</label>
                     <input type="email" name="_replyto" required>
                     <label for="message">Your message</label>

@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let i = 0;
     const typeText = "load Du-Min's personal website"
-    const typeSpeed = 70 //70
+    const typeSpeed = 70
     function typeWriter(){
         if(i < typeText.length){
             document.querySelector("#typed-text").innerHTML += typeText.charAt(i++)
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
             setTimeout(() => document.querySelector("#term-cursor").innerHTML = "", 1000)
         }
     }
-    setTimeout(typeWriter, 1000) //1000
+    setTimeout(typeWriter, 1000)
     setTimeout(() => {
         const p = document.querySelector("#count-down")
         p.textContent = "Loading finished! Ready in "
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
         secAbout.style.display = ""
         secAbout.className = "show"
         document.querySelector("nav").style.display = ""
-    }, 8000) //3400 8000
+    }, 8000) //8000
 
     function showSection(sectionId){
         const oldSection = document.querySelector(".show")
@@ -93,10 +93,37 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     myName.addEventListener("mouseover", changeNameColor)
     myName.addEventListener("click", changeNameColor)
+
     // spin profile removed for now
     // let degVal = 0
     // document.querySelector("#profile").addEventListener("click", event => {
     //     degVal = (degVal + 45) % 360
     //     event.target.style.transform = `rotate(${degVal}deg)`
     // })
+    
+    const form = document.querySelector("form")
+    form.addEventListener("submit", event => {
+    event.preventDefault()
+    const email = document.querySelector("input")
+    const userMessage = document.querySelector("textarea")
+    axios.post("https://formspree.io/f/mgerwwbk", {_repyto : email.value, message : userMessage.value})
+        .then(response => {
+            const feedback = document.querySelector("#submit-feedback")
+            feedback.style.display = "flex"
+            if(response.data.ok){
+                email.value = ""
+                userMessage.value = ""
+                feedback.textContent = "Your message was submitted successfully!"
+            } else {
+                feedback.style.color = "#ff0000"
+                feedback.textContent = "There was an error. Please try agian later!"
+            }
+            setTimeout(() => {
+                feedback.style.color = ""
+                feedback.innerHTML = ""
+                feedback.display = ""
+            }, 5000)
+        })
+        .catch(err => console.error(err))
+    })  
 })

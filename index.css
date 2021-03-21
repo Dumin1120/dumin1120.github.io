@@ -73,11 +73,19 @@ section {
     list-style-type: none;
     padding: 0px;
 }
+#submit-feedback {
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #c1deca;
+    border-radius: 12px;
+    padding: 8px;
+}
 #skills-container {
 }
 #skills-container ul {
     display: grid;
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(3, 33%);
     gap: 10px 10px;
 }
 #skills-container ul li {
@@ -86,6 +94,7 @@ section {
     align-items: center;
     background-color: #00000030;
     border-radius: 50%;
+    padding: 2px;
     border: 2px solid #7092d5;
 }
 .skills-icons {
