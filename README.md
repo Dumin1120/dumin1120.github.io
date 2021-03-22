@@ -190,12 +190,9 @@ Your site needs to implement all user stories and meet the UI/UX criteria. There
 
 Version History:
 
-1.004 better handling form submission error
-
-1.003 fix page re-direct and more friendly after form submission
-
-1.002 add skills section, working on responsive web design
-
-1.001 fix broken image links
-
-1.000 initial version, working on skills section and responsive web design
+- 1.010 redefine project section, refactor css, finish initial responsive design
+- 1.004 better handling form submission error
+- 1.003 fix page re-direct and more friendly after form submission
+- 1.002 add skills section, working on responsive web design
+- 1.001 fix broken image links
+- 1.000 initial version, working on skills section and responsive web design

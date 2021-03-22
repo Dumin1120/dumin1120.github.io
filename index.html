@@ -23,14 +23,14 @@
         <section class="show" id="intro">
             <div id="intro-container">
                 <p> Login: <span id="time-text"></span> on ttys000</h2>
-                <p> ~ <span id="typed-text"></span><span id="term-cursor">❚</span></h2>
+                <p id="term-typing"> ~ <span id="typed-text"></span><span id="term-cursor"><img src="./assets/icons/terCursor.png"></span></h2>
                 <p id="count-down"></h2>
             </div>
         </section>
         <section class="hide" id="about">
             <div class="section-header"></div>
             <div id="about-container">
-                <div id="msg-container">
+                <div class="msg-container">
                     <p id="msg1">Hi, my name is</p>
                     <p id="msg2"><span id="my-name">Du Min Chen</span>.</p>
                     <p id="msg3">I'm a full stack software developer.</p>
@@ -65,8 +65,8 @@
             <div id="projects-container">
                 <div id="project-1">
                     <div class="project-desc">
-                        <h2>Dragon Siege</h2>
-                        <h3>It is a text turn-based Role-Playing-Game using node.js and terminal.</h3>
+                        <p class="project-title">Dragon Siege</p>
+                        <p class="project-summary">It is a text turn-based Role-Playing-Game using node.js and terminal.</p>
                         <ul>
                             <li>A turn-based combat system that during combat player and monster take turn to attack</li>
                             <li>A level-up system that player gains experience from killing monster then level up</li>
@@ -84,8 +84,8 @@
                 </div>
                 <div id="project-2">
                     <div class="project-desc">
-                        <h2>Snowman</h2>
-                        <h3>It is a word guessing game that each time a player guesses one letter, also known as hangman game</h3>
+                        <p class="project-title">Snowman</p>
+                        <p class="project-summary">It is a word guessing game that each time a player guesses one letter, also known as hangman game</p>
                         <ul>
                             <li>Use console.clear() function and while loop to mimic the screen is constantly updating after every letter guess</li>
                             <li>Use square emoji to mimic the word board</li>
@@ -109,10 +109,12 @@
             <div id="contact-container">
                 <p>Feel free to leave me a message!</p>
                 <form>
-                    <label for="_replyto">Your email</label>
-                    <input type="email" name="_replyto" required>
-                    <label for="message">Your message</label>
-                    <textarea name="message" required></textarea>
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" id="form-name" required>
+                    <label for="_replyto">Email:</label>
+                    <input type="email" name="_replyto" id="form-email" required>
+                    <label for="message">Message:</label>
+                    <textarea name="message" id="form-msg" required></textarea>
                     <button type="submit">Send</button>
                 </form>
                 <ul id="contact-links">

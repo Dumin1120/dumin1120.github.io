@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let ms = 0
         for(let i = 3; i > 0; i--){
             ms += 1000
-            setTimeout(() => p.textContent += `${i}..`, ms)
+            setTimeout(() => p.textContent += `${i}.. `, ms)
         }
     }, 4300) //4300
     setTimeout(() => {
@@ -101,19 +101,33 @@ document.addEventListener("DOMContentLoaded", () => {
     //     event.target.style.transform = `rotate(${degVal}deg)`
     // })
 
+    const projectImages = document.querySelectorAll(`[class*="project-img"]`)
+    for(const img of projectImages){
+        img.addEventListener("click", event => {
+            event.target.className = event.target.className === "project-img-scale" ? "project-img" : "project-img-scale"
+        })
+        img.addEventListener("mouseout", event => {
+            if(event.target.className === "project-img-scale"){
+                event.target.className = "project-img"
+            }
+        })
+    }
+
     const form = document.querySelector("form")
     form.addEventListener("submit", event => {
         event.preventDefault()
-        const email = document.querySelector("input")
-        const userMessage = document.querySelector("textarea")
+        const fName = document.querySelector("#form-name")
+        const fEmail = document.querySelector("#form-email")
+        const fMsg = document.querySelector("#form-msg")
         const section = document.querySelector("#contact")
         const div = document.createElement("div")
         div.className = "submit-response"
-        axios.post("https://formspree.io/f/mgerwwbk", { _repyto : email.value, message : userMessage.value })
+        axios.post("https://formspree.io/f/mgerwwbk", { name : fName.value, _repyto : fEmail.value, message : fMsg.value })
         .then(response => {
             if(response.data.ok){
-                email.value = ""
-                userMessage.value = ""
+                fName.value = ""
+                fEmail.value = ""
+                fMsg.value = ""
                 div.textContent = "Your message was submitted successfully!"
             } else {
                 div.style.color = "#ff0000"
