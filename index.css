@@ -38,7 +38,7 @@ section {
     right: 0px;
     bottom: 0px;
     display: flex;
-    flex-flow: column wrap;
+    flex-direction: column;
     align-items: center;
     color: rgb(42, 171, 80);
     font-family: Verdana;
@@ -55,7 +55,7 @@ section {
 }
 #about-container, #skills-container, #contact-container {
     display: flex;
-    flex-flow: column wrap;
+    flex-direction: column;
     align-items: center;
 }
 #resume-container {
@@ -152,7 +152,7 @@ section {
 }
 form {
     display: flex;
-    flex-flow: column wrap;
+    flex-direction: column;
     align-items: center;
     color: rgb(152, 177, 225);
 }
@@ -163,18 +163,6 @@ form input, form textarea {
     width: 98%;
     background-color: rgb(210, 210, 210);
     margin-bottom: 20px;
-}
-form input {
-    font-size: 1.1em;
-}
-form textarea {
-    font-size: 1.3em;
-    height: 200px;
-}
-form button {
-    font-size: 1.1em;
-    background-color: rgb(210, 210, 210);
-    margin-bottom: 40px;
 }
 #contact-links {
     display: flex;
@@ -224,7 +212,7 @@ form button {
     }
     #term-cursor img {
         width: 9px;
-        height: 24px;
+        height: 18px;
     }
 
     #msg1 {
@@ -292,7 +280,18 @@ form button {
     form, #contact-container ul {
         width: 60%;
     }
-
+    form input {
+        font-size: 1.1em;
+    }
+    form textarea {
+        font-size: 1.3em;
+        height: 200px;
+    }
+    form button {
+        font-size: 1.1em;
+        background-color: rgb(210, 210, 210);
+        margin-bottom: 40px;
+    }
 }
 @media screen and (max-width: 2561px) {
 
@@ -314,7 +313,7 @@ form button {
 
     #project-1, #project-2 {
         display: flex;
-        flex-flow: column wrap;
+        flex-direction: column;
         align-content: center;
     }
     .project-desc {
@@ -337,9 +336,6 @@ form button {
     .img-container {
         text-align: center;
     }
-    /* .img-overlay {
-        grid-area: 9/2/17/8;
-    } */
 }
 @media screen and (max-width: 580px) {
 
@@ -383,7 +379,8 @@ form button {
         margin: 0px;
     }
     .nav-button {
-        font-size: 10px;
+        font-size: 12px;
+        margin: 0px;
     }
 
     #intro-container {
@@ -391,7 +388,7 @@ form button {
     }
     #term-cursor img {
         width: 8px;
-        height: 14px;
+        height: 13px;
     }
 
     section {
@@ -409,7 +406,22 @@ form button {
         font-size: 19px;
     }
     #profile {
-        width: 50%;
+        width: 55%;
+    }
+
+    form input {
+        font-size: 1.0em;
+        width: 95%;
+    }
+    form textarea {
+        font-size: 1.2em;
+        height: 200px;
+    }
+    form button {
+        font-size: 1em;
+        background-color: rgb(210, 210, 210);
+        margin: 1px 1px 30px 1px;
+        padding: 4px;
     }
 }
 

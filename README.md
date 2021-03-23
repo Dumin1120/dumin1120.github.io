@@ -190,6 +190,7 @@ Your site needs to implement all user stories and meet the UI/UX criteria. There
 
 Version History:
 
+- 1.011 fix some sections didn't display properly in safari browser
 - 1.010 redefine project section, refactor css, finish initial responsive design
 - 1.004 better handling form submission error
 - 1.003 fix page re-direct and more friendly after form submission

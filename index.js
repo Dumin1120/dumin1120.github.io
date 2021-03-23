@@ -10,12 +10,12 @@ document.addEventListener("DOMContentLoaded", () => {
     dateTime[2] = dateTime[2][0] === "0" ? dateTime[2].slice(1) : dateTime[2]
     document.querySelector("#time-text").innerHTML = `${dateTime.join(" ")}`
 
-    let i = 0;
+    let typeIndex = 0;
     const typeText = "load Du-Min's personal website"
     const typeSpeed = 70
     function typeWriter(){
-        if(i < typeText.length){
-            document.querySelector("#typed-text").innerHTML += typeText.charAt(i++)
+        if(typeIndex < typeText.length){
+            document.querySelector("#typed-text").innerHTML += typeText.charAt(typeIndex++)
             setTimeout(typeWriter, typeSpeed)
         } else {
             setTimeout(() => document.querySelector("#term-cursor").innerHTML = "", 1000)
@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 div.textContent = "Your message was submitted successfully!"
             } else {
                 div.style.color = "#ff0000"
-                div.textContent = "There was an error. Please try agian later!"
+                div.textContent = "There was an error. Please try agian later."
             }
             section.insertBefore(div, section.childNodes[0])
             setTimeout(() => div.remove(), 6000)
